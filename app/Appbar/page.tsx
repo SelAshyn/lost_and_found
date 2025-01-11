@@ -39,7 +39,7 @@ export default function Appbar() {
         {!session?.user && <button className="sign" onClick={() => signIn()}>Sign In</button>}
         {session?.user && (
           <div className="user-info" onClick={() => setDropdownOpen(!dropdownOpen)}>
-            <img src={session.user.image} alt="User Profile" className="profile-pic" />
+            <img src={session.user.image ?? ''} alt="User Profile" className="profile-pic" />
             {dropdownOpen && (
               <div className="dropdown-menu">
                 <button className="sign1" onClick={() => signOut()}>Sign Out</button>
