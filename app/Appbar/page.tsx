@@ -1,6 +1,6 @@
 "use client";
 
-import { signIn } from 'next-auth/react';
+import { signIn, signOut, useSession } from 'next-auth/react';
 import { Arima } from 'next/font/google';
 import Link from 'next/link';
 import "./style.css";
@@ -11,7 +11,7 @@ const arima = Arima({
 });
 
 export default function Appbar() {
-
+  const session = useSession();
   return (
     <div className="whole">
       <nav className={arima.className}>
@@ -33,7 +33,8 @@ export default function Appbar() {
           <li><a href="#">Returned Item</a></li>
           <li><a href="#">About Us</a></li>
         </ul>
-        <button className="sign" onClick={() => signIn()}>Sign In</button>
+        {!session.data?.user && <button className="sign" onClick={() => signOut()}>LogOut</button>}
+        {session.data?.user && <button className="sign" onClick={() => signIn()}>LogIn</button>}
         </nav>
     </div>
   );
