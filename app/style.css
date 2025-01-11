@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.wel {
+    align-items: center;
+    margin-top: 25vh;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.wel h1 {
+  font-size: 60px;
+  text-align: center;
+}
+.wel h2
+{
+  font-size: 30px;
+}
+.wel h3
+{
+  font-size: 20px;
+}
+@media screen and (max-width: 1300px) {
+  .wel {
+    margin-top: 10vh;
+  }
+}
+
+@media screen and (max-width: 765px) {
+  .wel h1 {
+    font-size: 40px;
+  }
+  .wel h2
+  {
+    font-size: 20px;
+  }
+  .wel h3
+  {
+    font-size: 15px;
+  }
+}
+
+.wel .signw
+{
+  width: 250px;
+  height: 30px;
+  background-color: rgba(10, 252, 179, 0.671);
+  text-align: center;
+  align-items: center;
+  color: black;
+  border-radius: 10px;
+}

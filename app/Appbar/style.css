@@ -1,0 +1,239 @@
+nav {
+    padding: 5px;
+    border-radius: 5px;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.699);
+    width: 100%;
+    display: flex;
+    flex: 1;
+    align-items: center;
+    border-radius: 5px;
+    justify-content: space-between; /* Changed from space-around to space-between */
+    margin: 0px auto;
+}
+
+nav .logo {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin: 0px 5px 0px 20px; /* Adjusted margin */
+}
+
+nav .logo h1 {
+    display: flex;
+    padding: 0px;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: aqua;
+}
+
+nav .logo i {
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+nav .logo h1 a {
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: aqua;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    display: block;
+    padding: 5px;
+    padding-right: 15px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight:900;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+nav ul li:hover a {
+    color: #df0885;
+}
+
+nav ul li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+nav ul li:hover ul {
+    display: block;
+}
+
+nav ul li ul li {
+    width: 200px;
+    margin-bottom: 10px;
+}
+
+nav ul li ul li a {
+    padding: 5px;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: normal;
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+nav ul li ul li a:hover {
+    color: #0085a1;
+}
+
+.sign {
+    background-color: #0085a1;
+    border-radius: 5px;
+    display: block;
+    padding: 5px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 15px;
+    margin-right: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.sign:hover {
+    background-color: rgb(17, 217, 217);
+    color: black;
+}
+
+.whole {
+    margin: 20px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.log1 {
+    margin-left: 8px;
+    display: flexbox;
+    margin-top: 4px;
+    justify-content: left;
+    align-items: center;
+    padding: 12px 0px 0px 0px;
+}
+
+.profile-pic {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-right: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.profile-pic:hover {
+  transform: scale(1.1);
+}
+
+.user-info {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-menu {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  width: 100px;
+  right: 10px;
+  background-color: rgb(0, 0, 0);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.dropdown-menu a, .dropdown-menu button {
+  padding: 5px 20px;
+  text-align: left;
+  border: none;
+  background: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.dropdown-menu a:hover, .dropdown-menu button:hover {
+  background-color: #14744c;
+}
+
+  /* Add this code at the end of your existing CSS */
+  @media screen and (max-width: 1300px) {
+    /* Styles for screens with a maximum width of 1300px */
+  
+    nav {
+      flex-direction: column;
+      align-items: center; /* Changed from flex-start to center */
+    }
+  
+    nav .logo {
+      margin: 10px;
+      justify-content: center;
+    }
+  
+    nav .logo h1 {
+      font-size: 18px;
+    }
+  
+    nav ul {
+      flex-direction: column;
+      align-items: center; /* Changed from flex-start to center */
+      margin-top: 10px;
+    }
+  
+    nav ul li {
+      position: static;
+    }
+  
+    nav ul li ul {
+      position: static;
+      background-color: transparent;
+      box-shadow: none;
+      padding: 0;
+      border: none;
+      margin-left: 0; /* Adjusted margin */
+    }
+  
+    nav ul li a {
+      padding: 5px 10px;
+    }
+    .sign
+    {
+      margin-right: 0px;
+    }
+    .profile-pic {
+      margin-right: 0px;
+    }
+    .dropdown-menu {
+      top: 48px;
+      right: -30px;
+    }
+  }
