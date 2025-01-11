@@ -33,8 +33,8 @@ export default function Appbar() {
           <li><a href="#">Returned Item</a></li>
           <li><a href="#">About Us</a></li>
         </ul>
-        {!session.data?.user && <button className="sign" onClick={() => signOut()}>SignOut</button>}
-        {session.data?.user && <button className="sign" onClick={() => signIn()}>SignIn</button>}
+        {session.data?.user && <button className="sign" onClick={() => signOut()}>SignOut</button>}
+        {!session.data?.user && <button className="sign" onClick={() => signIn()}>SignIn</button>}
         </nav>
     </div>
   );
