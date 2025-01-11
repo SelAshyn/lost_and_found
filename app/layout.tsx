@@ -6,10 +6,10 @@ import { Providers } from "./provider";
 
 export const metadata: Metadata = {
   title: {
-    default: "Code for Future - CodeGuide",
-    template: "%s | CodeGuide",
+    default: "Lost && Found",
+    template: "%s | SXC",
   },
-  description: 'By SelAshyn',
+  description: 'By ALCC',
 };
 
 export default function RootLayout({
