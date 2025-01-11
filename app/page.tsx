@@ -7,7 +7,6 @@ const bebasneue = Bebas_Neue({
   })
   
 export default function Home() {
-
   return (
       <div className="wel" style={bebasneue.style}>
           <>

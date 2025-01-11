@@ -1,5 +1,6 @@
 "use client";
 
+import { signIn } from 'next-auth/react';
 import { Arima } from 'next/font/google';
 import Link from 'next/link';
 import "./style.css";
@@ -32,7 +33,7 @@ export default function Appbar() {
           <li><a href="#">Returned Item</a></li>
           <li><a href="#">About Us</a></li>
         </ul>
-        <button className="sign">Sign In</button>
+        <button className="sign" onClick={() => signIn()}>Sign In</button>
         </nav>
     </div>
   );
