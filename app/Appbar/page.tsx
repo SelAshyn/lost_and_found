@@ -33,9 +33,14 @@ export default function Appbar() {
           <li><a href="#">Returned Item</a></li>
           <li><a href="#">About Us</a></li>
         </ul>
-        {session.data?.user && <button className="sign" onClick={() => signOut()}>SignOut</button>}
-        {!session.data?.user && <button className="sign" onClick={() => signIn()}>SignIn</button>}
-        </nav>
+        {session.data?.user ? (
+          <div className="user-info" onClick={() => signOut()}>
+            <img src={session.data.user.image ?? ''} alt="User Profile" className="profile-pic" />
+          </div>
+        ) : (
+          <button className="sign" onClick={() => signIn()}>SignIn</button>
+        )}
+      </nav>
     </div>
   );
 }
