@@ -4,6 +4,7 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import { Arima } from 'next/font/google';
 import Link from 'next/link';
 import "./style.css";
+import { useState } from 'react';
 
 const arima = Arima({
   subsets: ['greek'],
@@ -12,6 +13,7 @@ const arima = Arima({
 
 export default function Appbar() {
   const { data: session } = useSession();
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   return (
     <div className="whole">
@@ -35,7 +37,18 @@ export default function Appbar() {
           <li><a href="#">About Us</a></li>
         </ul>
         {!session?.user && <button className="sign" onClick={() => signIn()}>Sign In</button>}
-        {session?.user && <button className="sign1" onClick={() => signOut()}>Sign Out</button>}
+        {session?.user && (
+          <div className="user-info" onClick={() => setDropdownOpen(!dropdownOpen)}>
+            <img src={session.user.image ?? ''} alt="User Profile" className="profile-pic" />
+            {dropdownOpen && (
+              <div className="dropdown-menu">
+                <button className="sign1" onClick={() => signOut()}>Sign Out</button>
+                <Link href="/profile">Profile</Link>
+                <Link href="/settings">Settings</Link>
+              </div>
+            )}
+          </div>
+        )}
       </nav>
     </div>
   );
