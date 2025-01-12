@@ -30,8 +30,8 @@ export default function Appbar() {
         </div>
         <ul>
           <li><a href="../components/LostItem">Lost an Item</a></li>
-          <li><a href="#">Found an Item</a></li>
-          <li><a href="#">View Lost Item</a></li>
+          <li><a href="../components/FoundItem">Found an Item</a></li>
+          <li><a href="#">View Lost Items</a></li>
           <li><a href="#">View Found Item</a></li>
           <li><a href="#">Returned Item</a></li>
           <li><a href="#">About Us</a></li>
