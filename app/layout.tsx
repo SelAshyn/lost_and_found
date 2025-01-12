@@ -19,6 +19,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+      <link rel="icon" href="/sxc.png" sizes="any" />
+      </head>
       <body>
           <Providers>
           <Appbar />
