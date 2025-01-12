@@ -3,7 +3,6 @@
 import { Bebas_Neue } from 'next/font/google';
 import "./style.css";
 import { signIn, useSession } from 'next-auth/react';
-import Link from 'next/link';
 
 const bebasneue = Bebas_Neue({
     subsets: ['latin'],
