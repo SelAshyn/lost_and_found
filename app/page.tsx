@@ -3,6 +3,7 @@
 import { Bebas_Neue } from 'next/font/google';
 import "./style.css";
 import { signIn, useSession } from 'next-auth/react';
+import Link from 'next/link';
 
 const bebasneue = Bebas_Neue({
     subsets: ['latin'],
@@ -14,6 +15,7 @@ export default function Home() {
 
   return (
       <div className="wel" style={bebasneue.style}>
+
         {session?.user ? (
           <div>
             <h1>Welcome to SXC Lost && Found, <span style={{fontSize: '40px', color: 'aqua'}}>{session.user.name}</span></h1>
@@ -28,7 +30,7 @@ export default function Home() {
               <h3 className='signw'>
                 Please <a href="#" style={{color: 'yellow'}} onClick={() => signIn()}>signin</a> to continue.
               </h3>
-            </center>
+            </center> 
           </>
         )}
         
