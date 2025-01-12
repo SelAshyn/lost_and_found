@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import styles from './styles.module.css';
 
-export function LostItemPage() {
+export function LostItem() {
     const { data: session } = useSession();
     const router = useRouter();
     const [showPopup, setShowPopup] = useState(false);
