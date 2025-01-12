@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import styles from './styles.module.css';
 
-export function LostItem() {
+export default function Page() {
     const { data: session } = useSession();
     const router = useRouter();
     const [showPopup, setShowPopup] = useState(false);
@@ -53,5 +53,3 @@ export function LostItem() {
         </div>
     );
 }
-
-export default LostItemPage;
