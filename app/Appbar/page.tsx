@@ -29,12 +29,12 @@ export default function Appbar() {
           </h1>
         </div>
         <ul>
-          <li><a href="../components/LostItem">Lost an Item</a></li>
-          <li><a href="../components/FoundItem">Found an Item</a></li>
-          <li><a href="#">View Lost Items</a></li>
-          <li><a href="#">View Found Item</a></li>
-          <li><a href="#">Returned Item</a></li>
-          <li><a href="#">About Us</a></li>
+          <li><Link href="/components/LostItem">Lost an Item</Link></li>
+          <li><Link href="/found">Found an Item</Link></li>
+          <li><Link href="/viewlost">View Lost Item</Link></li>
+          <li><Link href="/viewfound">View Found Item</Link></li>
+          <li><Link href="/returned">Returned Item</Link></li>
+          <li><Link href="/about">About Us</Link></li>
         </ul>
         {session.data?.user ? (
           <div className="user-info" onClick={() => setDropdownOpen(!dropdownOpen)}>
