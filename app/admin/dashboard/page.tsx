@@ -46,6 +46,7 @@ export default function AdminDashboard() {
         <div className="admin-container">
             <div className="admin-header">
                 <h1 className="admin-title">Admin Dashboard</h1>
+                <h2 className="admin-title">Welcome, {session.user.name}</h2>
                 <div className="admin-welcome">
                     <span>Welcome, {session.user.name}</span>
                     <img 
