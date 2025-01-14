@@ -23,7 +23,7 @@ const authOptions = {
     ],
     callbacks: {
         async signIn({ user }: { user: ExtendedUser }) {
-            const adminEmails = ['024a217@sxc.edu.np'];
+            const adminEmails = ['024a217@sxc.edu.np','rhishavlamichhane08@gmail.com'];
             user.role = adminEmails.includes(user.email ?? '') ? 'admin' : 'user';
             return true;
         },
