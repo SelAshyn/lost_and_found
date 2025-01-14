@@ -3,6 +3,8 @@
 import { Bebas_Neue } from 'next/font/google';
 import "./style.css";
 import { signIn, useSession } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
 
 const bebasneue = Bebas_Neue({
     subsets: ['latin'],
@@ -11,6 +13,13 @@ const bebasneue = Bebas_Neue({
   
 export default function Home() {
   const { data: session } = useSession();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (session?.user?.role === 'admin') {
+      router.replace('/admin/dashboard');
+    }
+  }, [session, router]);
 
   return (
       <div className="wel" style={bebasneue.style}>

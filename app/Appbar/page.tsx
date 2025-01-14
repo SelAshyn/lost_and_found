@@ -4,7 +4,8 @@ import { signIn, signOut, useSession } from 'next-auth/react';
 import { Arima } from 'next/font/google';
 import Link from 'next/link';
 import "./style.css";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
 const arima = Arima({
   subsets: ['greek'],
@@ -12,8 +13,19 @@ const arima = Arima({
 });
 
 export default function Appbar() {
-  const session = useSession();
+  const { data: session } = useSession();
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const router = useRouter();
+
+  useEffect(() => {
+    if (session?.user?.role === 'admin') {
+      router.push('/admin/dashboard'); // Redirect to admin dashboard
+    }
+  }, [session, router]);
+
+  const handleSignIn = async () => {
+    await signIn();
+  };
 
   return (
     <div className="whole">
@@ -29,16 +41,20 @@ export default function Appbar() {
           </h1>
         </div>
         <ul>
-          <li><Link href="/components/LostItem">Lost an Item</Link></li>
-          <li><Link href="/found">Found an Item</Link></li>
-          <li><Link href="/viewlost">View Lost Item</Link></li>
-          <li><Link href="/viewfound">View Found Item</Link></li>
-          <li><Link href="/returned">Returned Item</Link></li>
-          <li><Link href="/about">About Us</Link></li>
+          {session?.user?.role !== 'admin' && (
+            <>
+              <li><Link href="/components/LostItem">Lost an Item</Link></li>
+              <li><Link href="/found">Found an Item</Link></li>
+              <li><Link href="/viewlost">View Lost Item</Link></li>
+              <li><Link href="/viewfound">View Found Item</Link></li>
+              <li><Link href="/returned">Returned Item</Link></li>
+              <li><Link href="/about">About Us</Link></li>
+            </>
+          )}
         </ul>
-        {session.data?.user ? (
+        {session?.user ? (
           <div className="user-info" onClick={() => setDropdownOpen(!dropdownOpen)}>
-            <img src={session.data.user.image ?? ''} alt="User Profile" className="profile-pic" />
+            <img src={session.user.image ?? ''} alt="User Profile" className="profile-pic" />
             {dropdownOpen && (
               <div className="dropdown-menu">
                 <button className="dropdown-item" onClick={() => signOut()}>Sign Out</button>
@@ -46,7 +62,7 @@ export default function Appbar() {
             )}
           </div>
         ) : (
-          <button className="sign" onClick={() => signIn()}>SignIn</button>
+          <button className="sign" onClick={handleSignIn}>SignIn</button>
         )}
       </nav>
     </div>
