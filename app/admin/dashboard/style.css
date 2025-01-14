@@ -136,6 +136,10 @@
     background: #7f8c8d;
 }
 
+span{
+    color: #000;
+}
+
 /* Responsive Design */
 @media screen and (max-width: 1200px) {
     .admin-container {
