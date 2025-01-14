@@ -1,6 +1,4 @@
 .admin-container {
-    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
-    min-height: 100vh;
     padding: 2rem;
     background-attachment: fixed;
     background-size: cover;
