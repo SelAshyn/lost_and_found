@@ -41,7 +41,6 @@ export default function Appbar() {
           </h1>
         </div>
         <ul>
-          {session?.user?.role !== 'admin' && (
             <>
               <li><Link href="/components/LostItem">Lost an Item</Link></li>
               <li><Link href="/found">Found an Item</Link></li>
@@ -50,7 +49,6 @@ export default function Appbar() {
               <li><Link href="/returned">Returned Item</Link></li>
               <li><Link href="/about">About Us</Link></li>
             </>
-          )}
         </ul>
         {session?.user ? (
           <div className="user-info" onClick={() => setDropdownOpen(!dropdownOpen)}>
