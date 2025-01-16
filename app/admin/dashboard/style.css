@@ -101,7 +101,7 @@ nav.close .logo_name{
     pointer-events: none;
 }
 nav .menu-items{
-    margin-top: 40px;
+    margin-top: 20px;
     height: calc(100% - 90px);
     display: flex;
     flex-direction: column;
@@ -165,8 +165,27 @@ body.dark .nav-links li a:hover .link-name{
     color: var(--text-color);
 }
 .menu-items .logout-mode{
-    padding-top: 10px;
-    border-top: 1px solid var(--border-color);
+    margin-top: auto;
+    padding: 20px 0;
+}
+.logout-mode li {
+    width: 100%;
+}
+.logout-mode li a {
+    color: var(--text-color);
+    transition: var(--tran-03);
+}
+.logout-mode li a:hover {
+    color: var(--primary-color);
+}
+.nav-links li a {
+    padding: 0 10px;
+    width: 100%;
+    justify-content: flex-start;
+}
+.sidebar-toggle {
+    cursor: pointer;
+    color: var(--text-color);
 }
 .dashboard{
     position: relative;

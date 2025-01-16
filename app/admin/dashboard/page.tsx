@@ -1,6 +1,6 @@
 "use client";
 
-import { useSession } from 'next-auth/react';
+import { useSession, signOut } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
@@ -23,6 +23,10 @@ export default function AdminDashboard() {
         return null;
     }
 
+    const handleLogout = async () => {
+        await signOut({ redirect: true, callbackUrl: '/' });
+    };
+
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
     };
@@ -34,17 +38,15 @@ export default function AdminDashboard() {
                     <div className="logo-image">
                         <img src="/sxc.png" alt="SXC Logo" />
                     </div>
-                    <br />
                     <span className="logo_name">
                         <img src="/logo.png" alt="Logo" width={150}/>
                     </span>
-                    <br /><br />
                 </div>
                 <div className="menu-items">
                     <ul className="nav-links">
                         <li>
                             <Link href="/admin/dashboard">
-                                <i className="fa-solid fa-house"></i>
+                                <i className="fa-solid fa-gauge"></i>
                                 <span className="link-name">Dashboard</span>
                             </Link>
                         </li>
@@ -56,7 +58,7 @@ export default function AdminDashboard() {
                         </li>
                         <li>
                             <Link href="/admin/analytics">
-                                <i className="fa-solid fa-square-poll-vertical"></i>
+                                <i className="fa-solid fa-chart-simple"></i>
                                 <span className="link-name">Analytics</span>
                             </Link>
                         </li>
@@ -64,9 +66,15 @@ export default function AdminDashboard() {
                     
                     <ul className="logout-mode">
                         <li>
-                            <a href="#" onClick={() => router.push('/')}>
+                            <Link href="/">
+                                <i className="fa-solid fa-house"></i>
+                                <span className="link-name">Home</span>
+                            </Link>
+                        </li>
+                        <li>
+                            <a href="#" onClick={handleLogout}>
                                 <i className="fa-solid fa-right-from-bracket"></i>
-                                <span className="link-name">Back to Home</span>
+                                <span className="link-name">Logout</span>
                             </a>
                         </li>
                     </ul>
@@ -74,41 +82,19 @@ export default function AdminDashboard() {
             </nav>
             <section className="dashboard">
                 <div className="top">
-                    <i className="fa-solid fa-bars fa-xl" onClick={toggleMenu}></i>
+                    <i className="fa-solid fa-bars fa-xl sidebar-toggle" onClick={toggleMenu}></i>
                     <div className="search-box">
                         <i className="fa-solid fa-magnifying-glass"></i>
                         <input type="text" placeholder="Search here..." />
                     </div>
-                    {session.user.image && (
-                        <img src={session.user.image} alt="Profile" />
-                    )}
-                </div>
-                <div className="dash-content">
-                    <div className="overview">
-                        <div className="title">
-                            <i className="fa-solid fa-gauge-simple-high"></i>
-                            <span className="text">Dashboard</span>
-                        </div>
-                        <div className="boxes">
-                            <div className="box box1">
-                                <i className="fa-solid fa-person-circle-question"></i>
-                                <span className="text">Lost Items</span>
-                                <span className="number">50</span>
-                            </div>
-                            <div className="box box2">
-                                <i className="fa-solid fa-person-circle-plus"></i>
-                                <span className="text">Found Items</span>
-                                <span className="number">20</span>
-                            </div>
-                            <div className="box box3">
-                                <i className="fa-solid fa-circle-exclamation"></i>
-                                <span className="text">Pending</span>
-                                <span className="number">10</span>
-                            </div>
-                        </div>
+                    <div className="user-info">
+                        {session.user.image && (
+                            <img src={session.user.image} alt="Profile" />
+                        )}
+                        <span className="user-name">{session.user.name}</span>
                     </div>
-                    {/* Rest of your dashboard content */}
                 </div>
+                {/* Rest of your dashboard content */}
             </section>
         </div>
     );
