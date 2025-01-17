@@ -3,6 +3,12 @@ import "./globals.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import Appbar from "./Appbar/page"; 
 import { Providers } from "./provider";
+import { Poppins } from 'next/font/google';
+
+const poppins = Poppins({
+  weight: ['400', '500', '600'],
+  subsets: ['latin'],
+});
 
 export const metadata: Metadata = {
   title: {
@@ -13,7 +19,6 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -21,13 +26,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-      <link rel="icon" href="/sxc.png" sizes="any" />
+        <link rel="icon" href="/sxc.png" sizes="any" />
       </head>
-      <body>
-          <Providers>
-          <Appbar />
-          {children}
-          </Providers>
+      <body className={poppins.className}>
+        <Providers>
+          <div className="content-wrapper">
+            <Appbar />
+            {children}
+          </div>
+        </Providers>
       </body>
     </html>
   );
