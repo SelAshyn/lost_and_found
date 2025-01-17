@@ -7,6 +7,7 @@ import Link from 'next/link';
 import "./style.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import Image from 'next/image';
 
 export default function AdminDashboard() {
     const { data: session } = useSession();
@@ -36,10 +37,10 @@ export default function AdminDashboard() {
             <nav className={!menuOpen ? 'close' : ''}>
                 <div className="logo-name">
                     <div className="logo-image">
-                        <img src="/sxc.png" alt="SXC Logo" />
+                        <Image src="/sxc.png" alt="SXC Logo" width={50} height={50} />
                     </div>
                     <span className="logo_name">
-                        <img src="/logo.png" alt="Logo" width={150}/>
+                        <Image src="/logo.png" alt="Logo" width={150} height={50} priority />
                     </span>
                 </div>
                 <div className="menu-items">
@@ -89,7 +90,12 @@ export default function AdminDashboard() {
                     </div>
                     <div className="user-info">
                         {session.user.image && (
-                            <img src={session.user.image} alt="Profile" />
+                            <Image 
+                                src={session.user.image} 
+                                alt="Profile" 
+                                width={40} 
+                                height={40} 
+                            />
                         )}
                         <span className="user-name">{session.user.name}</span>
                     </div>
