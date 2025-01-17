@@ -10,3 +10,28 @@ body
   background-size: cover;
   background-blend-mode: darken;
 }
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+:root{
+  /* ===== Colors ===== */
+  --primary-color: #73aadd;
+  --panel-color: #000000;
+  --text-color: #ffffff;
+  --black-light-color: #ffffff;
+  --border-color: #000000;
+  --toggle-color: #000000;
+  --box1-color: #4DA3FF;
+  --box2-color: #926bec;
+  --box3-color: #71f7ad;
+  --title-icon-color: #000000;
+  
+  /* ====== Transition ====== */
+  --tran-05: all 0.5s ease;
+  --tran-03: all 0.3s ease;
+  --tran-03: all 0.2s ease;
+}
