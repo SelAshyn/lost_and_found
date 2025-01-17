@@ -1,40 +1,17 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
-import { useSession, signOut } from 'next-auth/react';
-import { useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import "./style.css";
+import "./globals.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import Image from 'next/image';
 
 export default function AdminDashboard() {
-    const { data: session } = useSession();
-    const router = useRouter();
-    const [menuOpen, setMenuOpen] = useState(true);
-
-    useEffect(() => {
-        if (!session || session.user.role !== 'admin') {
-            router.push('/');
-        }
-    }, [session, router]);
-
-    if (!session || session.user.role !== 'admin') {
-        return null;
-    }
-
-    const handleLogout = async () => {
-        await signOut({ redirect: true, callbackUrl: '/' });
-    };
-
-    const toggleMenu = () => {
-        setMenuOpen(!menuOpen);
-    };
 
     return (
         <div>
-            <nav className={!menuOpen ? 'close' : ''}>
+            <nav>
                 <div className="logo-name">
                     <div className="logo-image">
                         <Image src="/sxc.png" alt="SXC Logo" width={50} height={50} />
@@ -73,7 +50,7 @@ export default function AdminDashboard() {
                             </Link>
                         </li>
                         <li>
-                            <a href="#" onClick={handleLogout}>
+                            <a href="#">
                                 <i className="fa-solid fa-right-from-bracket"></i>
                                 <span className="link-name">Logout</span>
                             </a>
@@ -83,21 +60,19 @@ export default function AdminDashboard() {
             </nav>
             <section className="dashboard">
                 <div className="top">
-                    <i className="fa-solid fa-bars fa-xl sidebar-toggle" onClick={toggleMenu}></i>
+                    <i className="fa-solid fa-bars fa-xl sidebar-toggle"></i>
                     <div className="search-box">
                         <i className="fa-solid fa-magnifying-glass"></i>
                         <input type="text" placeholder="Search here..." />
                     </div>
                     <div className="user-info">
-                        {session.user.image && (
-                            <Image 
-                                src={session.user.image} 
+                            <img
+                                src="https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Fworld-schools.com%2Fwp-content%2Fuploads%2F2023%2F01%2FIMG-Academy-cover-WS.webp&sp=1737130744T34f9ad8a0edf723432ce5e03591c2a7bf8d5b8edefab47418db08b18ea804a85" 
                                 alt="Profile" 
                                 width={40} 
                                 height={40} 
                             />
-                        )}
-                        <span className="user-name">{session.user.name}</span>
+                        <span className="user-name"></span>
                     </div>
                 </div>
                 {/* Rest of your dashboard content */}
