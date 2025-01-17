@@ -64,6 +64,7 @@ nav{
     top: 0;
     left: 0;
     height: 100%;
+    display: flex;
     width: 250px;
     justify-content: center;
     align-items: center;
