@@ -43,6 +43,9 @@ export default function Appbar() {
         <ul>
           {session?.user?.role === 'admin' ? (
             <>
+            <li><Link href="/components/LostItem">Lost an Item</Link></li>
+              <li><Link href="/components/FoundItem">Found an Item</Link></li>
+              <li><Link href="/returned">Returned Item</Link></li>
               <li><Link href="/admin/users">Manage Users</Link></li>
               <li><Link href="/admin/settings">Settings</Link></li>
             </>
