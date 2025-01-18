@@ -48,6 +48,7 @@ export default function Page() {
 
     return (
         <div>
+            <center>
             <div className="container">
                 <div className="form" style={sofia.style}>
                     <br />
@@ -71,6 +72,7 @@ export default function Page() {
                     <br /><br />
                 </div>                
             </div>
+            </center>
         </div>
     );
 }
