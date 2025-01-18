@@ -49,7 +49,7 @@ export default function Appbar() {
           ) : (
             <>
               <li><Link href="/components/LostItem">Lost an Item</Link></li>
-              <li><Link href="/found">Found an Item</Link></li>
+              <li><Link href="/components/FoundItem">Found an Item</Link></li>
               <li><Link href="/viewlost">View Lost Item</Link></li>
               <li><Link href="/viewfound">View Found Item</Link></li>
               <li><Link href="/returned">Returned Item</Link></li>
