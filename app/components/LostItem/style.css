@@ -1,68 +1,126 @@
 .container {
-    border-radius: 8px;
-  }
-  .form
-  {
-    width: 600px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.form {
+    width: 100%;
+    max-width: 600px;
     background-color: #212121;
     border-radius: 8px;
-  }
-  .form h1
-  {
-    font-size: 35px;
-  }
-  .form label {
-    font-size: 20px;
-    padding-left: 0px;
-  }
-  
-  .input, .form textarea, .form button {
-    width: 300px;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+.form h1 {
+    font-size: clamp(24px, 5vw, 35px);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form label {
+    font-size: clamp(16px, 4vw, 20px);
+    display: block;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.input, .form textarea, .form button {
+    width: 100%;
+    max-width: 300px;
     height: 45px;
     border: none;
     text-align: center;
-    margin-left: 20px;
     outline: none;
-    padding: 0px 7px;
+    padding: 10px;
     border-radius: 6px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     color: #fff;
-    font-size: 20px;
+    font-size: clamp(14px, 3vw, 20px);
     background-color: transparent;
     box-shadow: 3px 3px 10px rgba(0,0,0,1),
     -1px -1px 6px rgba(255, 255, 255, 0.4);
-  }
-  
-  .input:focus, .form textarea:focus{
+}
+
+.form textarea {
+    width: 100%;
+    max-width: 400px;
+    height: 100px;
+    resize: none;
+    margin: 0 auto;
+    display: block;
+}
+
+.input:focus, .form textarea:focus {
     border: 2px solid transparent;
     color: #fff;
     box-shadow: 3px 3px 10px rgba(0,0,0,1),
     -1px -1px 6px rgba(255, 255, 255, 0.4),
     inset 3px 3px 10px rgba(0,0,0,1),
     inset -1px -1px 6px rgba(255, 255, 255, 0.4);
-  }
-  
-  
-  .container .input:valid,
-  .container .input:focus, .form textarea:valid, .form textarea:focus{
+}
+
+.container .input:valid,
+.container .input:focus, 
+.form textarea:valid, 
+.form textarea:focus {
     box-shadow: 3px 3px 10px rgba(0,0,0,1),
     -1px -1px 6px rgba(255, 255, 255, 0.4),
     inset 3px 3px 10px rgba(0,0,0,1),
     inset -1px -1px 6px rgba(255, 255, 255, 0.4);
-  }
-  .form textarea{
-    width: 400px;
-    height: 100px;
-    resize: none;
-  }
-  
-  .form button:active {
+}
+
+.form button {
+    display: block;
+    margin: 20px auto;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.form button:active {
     color: #666;
     box-shadow: 3px 3px 10px rgba(0,0,0,1),
     -1px -1px 6px rgba(255, 255, 255, 0.4),
     inset 3px 3px 10px rgba(0,0,0,1),
     inset -1px -1px 6px rgba(255, 255, 255, 0.4);
-  }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .form {
+        padding: 15px;
+    }
+
+    .input, .form textarea, .form button {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .form {
+        padding: 10px;
+    }
+
+    .form h1 {
+        margin-bottom: 15px;
+    }
+
+    .input, .form textarea, .form button {
+        height: 40px;
+        margin-bottom: 15px;
+    }
+
+    .form textarea {
+        height: 80px;
+    }
+}
   
   
   
