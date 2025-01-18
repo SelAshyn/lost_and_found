@@ -51,16 +51,16 @@ export default function Page() {
            <center>
             <div className="wrapper">
                 <br />
-    <header style={sofia.style}>Send us a Message</header>
+    <header style={sofia.style}>REPORT LOST ITEM</header>
     <form action="#" style={source.style}>
       <div className="dbl-field">
         <div className="field">
-          <input type="text" name="name" placeholder="Enter your name" />
-          <i className="bi bi-person-fill"></i>
+          <input type="text" name="name" placeholder="Item Name" />
+          <i className="bi bi-box-fill"></i>
         </div>
         <div className="field">
-          <input type="text" name="email" placeholder="Enter your email" />
-          <i className="bi bi-envelope-fill"></i>
+          <input type="text" name="email" placeholder="Lost Place" />
+          <i className="bi bi-geo-alt-fill"></i>
         </div>
       </div>
       <div className="dbl-field">
@@ -69,17 +69,17 @@ export default function Page() {
           <i className="bi bi-telephone-fill"></i>
         </div>
         <div className="field">
-          <input type="text" name="website" placeholder="Enter your website" />
-          <i className="bi bi-globe"></i>
+          <input type="text" name="website" placeholder="Lost Date (dd/mm/yyyy)" />
+          <i className="bi bi-calendar-event-fill"></i>
         </div>
       </div>
       <div className="message">
-        <textarea placeholder="Write your message" name="message"></textarea>
-        <i className="bi bi-chat-left-dots-fill"></i>
+        <textarea placeholder="Description of the Item" name="message"></textarea>
+        <i className="bi bi-file-earmark-fill"></i>
       </div>
       <center>
       <div className="button-area">
-        <button type="submit">Send Message</button>
+        <button type="submit">REPORT</button>
         <span></span>
       </div>
       </center>
