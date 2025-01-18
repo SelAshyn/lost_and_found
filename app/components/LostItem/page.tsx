@@ -4,6 +4,7 @@ import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import styles from './styles.module.css';
+import './styles.module.css'
 import { Sofia_Sans, Source_Sans_3} from "next/font/google"
 
 const sofia = Sofia_Sans({
