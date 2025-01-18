@@ -69,11 +69,11 @@
     background-color: #212121;
     border-radius: 8px;
   }
-  h1
+  .form h1
   {
     font-size: 35px;
   }
-  label {
+  .form label {
     font-size: 20px;
     padding-left: 0px;
   }
