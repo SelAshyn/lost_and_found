@@ -1,19 +1,12 @@
 
-body{
-    display: flex;
-    padding: 0 10px;
-    min-height: 100vh;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-    color: #fff;
-  }
-  .wrapper{
+
+.wrapper{
     margin: 0;
     padding: 0;
     font-family: "Poppins", sans-serif;
     width: 715px;
     background: #000000;
+    color: white;
     border-radius: 5px;
     box-shadow: 10px 10px 10px rgba(0,0,0,0.05);
   }
