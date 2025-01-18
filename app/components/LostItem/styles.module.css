@@ -52,3 +52,79 @@
         transform: scale(1);
     }
 } 
+
+
+.container {
+    position: relative;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+  }
+  .form
+  {
+    width: 600px;
+    background-color: #212121;
+    border-radius: 8px;
+  }
+  h1
+  {
+    font-size: 35px;
+  }
+  label {
+    font-size: 20px;
+    padding-left: 0px;
+  }
+  
+  .input, textarea, button {
+    width: 300px;
+    height: 45px;
+    border: none;
+    text-align: center;
+    margin-left: 20px;
+    outline: none;
+    padding: 0px 7px;
+    border-radius: 6px;
+    margin-bottom: 30px;
+    color: #fff;
+    font-size: 20px;
+    background-color: transparent;
+    box-shadow: 3px 3px 10px rgba(0,0,0,1),
+    -1px -1px 6px rgba(255, 255, 255, 0.4);
+  }
+  
+  .input:focus, textarea:focus{
+    border: 2px solid transparent;
+    color: #fff;
+    box-shadow: 3px 3px 10px rgba(0,0,0,1),
+    -1px -1px 6px rgba(255, 255, 255, 0.4),
+    inset 3px 3px 10px rgba(0,0,0,1),
+    inset -1px -1px 6px rgba(255, 255, 255, 0.4);
+  }
+  
+  
+  .container .input:valid,
+  .container .input:focus, textarea:valid, textarea:focus{
+    box-shadow: 3px 3px 10px rgba(0,0,0,1),
+    -1px -1px 6px rgba(255, 255, 255, 0.4),
+    inset 3px 3px 10px rgba(0,0,0,1),
+    inset -1px -1px 6px rgba(255, 255, 255, 0.4);
+  }
+  textarea{
+    width: 400px;
+    height: 100px;
+    resize: none;
+  }
+  
+  button:active {
+    color: #666;
+    box-shadow: 3px 3px 10px rgba(0,0,0,1),
+    -1px -1px 6px rgba(255, 255, 255, 0.4),
+    inset 3px 3px 10px rgba(0,0,0,1),
+    inset -1px -1px 6px rgba(255, 255, 255, 0.4);
+  }
+  
+  
+  

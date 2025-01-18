@@ -4,6 +4,17 @@ import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import styles from './styles.module.css';
+import { Sofia_Sans, Source_Sans_3} from "next/font/google"
+
+const sofia = Sofia_Sans({
+    weight: '500',
+    subsets: ['cyrillic-ext', 'greek'],
+})
+
+const source = Source_Sans_3({
+    subsets: ['cyrillic-ext', 'greek'],
+    weight: '400'
+})
 
 export default function Page() {
     const { data: session } = useSession();
@@ -35,20 +46,29 @@ export default function Page() {
     }
 
     return (
-        <div className="p-6 max-w-2xl mx-auto">
-            <h1 className="text-2xl font-bold mb-4">Report Lost Item</h1>
-            <div className="space-y-4">
-                <form className="space-y-4">
-                    <div>
-                        <label className="block mb-2">Item Name</label>
-                        <input 
-                            type="text" 
-                            className="w-full p-2 border rounded"
-                            placeholder="Enter item name"
-                        />
-                    </div>
-                    {/* Add more form fields as needed */}
-                </form>
+        <div>
+            <div className="container">
+                <div className="form" style={sofia.style}>
+                    <br />
+                    <h1>REPORT LOST ITEM</h1><br />
+                    <label>Item Name</label>
+                    <input type="text" name="text" className="input" style={source.style} required/>
+                    <br />
+                    <label htmlFor="">Lost Place</label>
+                    <input type="text" name="text" className="input" style={source.style} required/>
+                    <br />
+                    <label htmlFor="">Lost Date</label>
+                    <input type="date" name="date" className="input" style={source.style} required/>
+                    <br />
+                    <label htmlFor="">Contact</label>
+                    <input type="tel" name="number" className="input" style={source.style} required/>
+                    <br />
+                    <label htmlFor="">Description of the Item</label><br /><br />
+                    <textarea name="" id=""required></textarea>
+                    <br />
+                    <button style={sofia.style}>REPORT</button>
+                    <br /><br />
+                </div>                
             </div>
         </div>
     );
