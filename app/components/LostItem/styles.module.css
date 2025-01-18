@@ -78,7 +78,7 @@
     padding-left: 0px;
   }
   
-  .input, textarea, button {
+  .input, .form textarea, .form button {
     width: 300px;
     height: 45px;
     border: none;
@@ -95,7 +95,7 @@
     -1px -1px 6px rgba(255, 255, 255, 0.4);
   }
   
-  .input:focus, textarea:focus{
+  .input:focus, .form textarea:focus{
     border: 2px solid transparent;
     color: #fff;
     box-shadow: 3px 3px 10px rgba(0,0,0,1),
@@ -106,19 +106,19 @@
   
   
   .container .input:valid,
-  .container .input:focus, textarea:valid, textarea:focus{
+  .container .input:focus, .form textarea:valid, .form textarea:focus{
     box-shadow: 3px 3px 10px rgba(0,0,0,1),
     -1px -1px 6px rgba(255, 255, 255, 0.4),
     inset 3px 3px 10px rgba(0,0,0,1),
     inset -1px -1px 6px rgba(255, 255, 255, 0.4);
   }
-  textarea{
+  .form textarea{
     width: 400px;
     height: 100px;
     resize: none;
   }
   
-  button:active {
+  .form button:active {
     color: #666;
     box-shadow: 3px 3px 10px rgba(0,0,0,1),
     -1px -1px 6px rgba(255, 255, 255, 0.4),
