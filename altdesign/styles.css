@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #0047ab;
+    opacity: 0.6;
+    color: white;
+}
+
+/* Navbar */
+.navbar{
+    position: relative;
+}
+
+body >.navbar >ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    background-color: #1434A4;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 40%;
+    transform: translate(75%,-50%);
+    border-radius: 15px;
+}
+
+body >.navbar >ul >li{
+    float: left;
+}
+
+body >.navbar >ul >li >a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 18px 20px;
+    text-decoration: none;
+}
+
+body >.navbar >ul >li >a:hover{
+    background-color: cornsilk;
+}
