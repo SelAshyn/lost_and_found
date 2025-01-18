@@ -1,9 +1,6 @@
 
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 .wrapper{
-    margin: 0;
-    padding: 0;
-    font-family: "Poppins", sans-serif;
     width: 715px;
     background: #000000;
     color: white;
@@ -53,6 +50,7 @@
     color: white;
     font-size: 16px;
     border-radius: 5px;
+    font-family: "Poppins", sans-serif;
     background-color: #000000;
     border: 1px solid #ccc;
   }
@@ -79,9 +77,11 @@
   form .message textarea{
     min-height: 130px;
     resize: vertical;
+    font-family: "Poppins", sans-serif;
     max-height: 230px;
-    max-width: 90%;
-    min-width: 90%;
+    max-width: 651px;
+    min-width: 651px;
+
     padding: 15px 20px 0 48px;
   }
   form .message textarea::-webkit-scrollbar{
