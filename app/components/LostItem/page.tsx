@@ -48,6 +48,7 @@ export default function Page() {
 
     return (
         <div>
+           <div className="content">
            <center>
             <div className="wrapper">
                 <br />
@@ -87,6 +88,7 @@ export default function Page() {
     </form>
   </div>
             </center>
+           </div>
         </div>
     );
 }
