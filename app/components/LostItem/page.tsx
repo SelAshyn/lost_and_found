@@ -3,7 +3,8 @@
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
-import './styles.module.css'
+import styles from './styles.module.css';
+import './style.css'
 import { Sofia_Sans, Source_Sans_3} from "next/font/google"
 
 const sofia = Sofia_Sans({
@@ -34,9 +35,9 @@ export default function Page() {
 
     if (!session) {
         return showPopup ? (
-            <div className="overlay">
-                <div className={`"popup" ${showPopup ? "show" : ''}`}>
-                    <div className="popupContent">
+            <div className={styles.overlay}>
+                <div className={`${styles.popup} ${showPopup ? styles.show : ''}`}>
+                    <div className={styles.popupContent}>
                         <h2>Please Sign In First!</h2>
                         <p>Redirecting to home page...</p>
                     </div>
