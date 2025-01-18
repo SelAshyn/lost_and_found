@@ -48,31 +48,44 @@ export default function Page() {
 
     return (
         <div>
-            <center>
-                <br /><br />
-            <div className="container">
-                <div className="form" style={sofia.style}>
-                    <br />
-                    <h1>REPORT LOST ITEM</h1><br />
-                    <label>Item Name</label>
-                    <input type="text" name="text" className="input" style={source.style} required/>
-                    <br />
-                    <label htmlFor="">Lost Place</label>
-                    <input type="text" name="text" className="input" style={source.style} required/>
-                    <br />
-                    <label htmlFor="">Lost Date</label>
-                    <input type="date" name="date" className="input" style={source.style} required/>
-                    <br />
-                    <label htmlFor="">Contact</label>
-                    <input type="tel" name="number" className="input" style={source.style} required/>
-                    <br />
-                    <label htmlFor="">Description of the Item</label><br /><br />
-                    <textarea name="" id=""required></textarea>
-                    <br />
-                    <button style={sofia.style}>REPORT</button>
-                    <br /><br />
-                </div>                
-            </div>
+           <center>
+            <div className="wrapper">
+                <br />
+    <header style={sofia.style}>Send us a Message</header>
+    <form action="#" style={source.style}>
+      <div className="dbl-field">
+        <div className="field">
+          <input type="text" name="name" placeholder="Enter your name" />
+          <i className="bi bi-person-fill"></i>
+        </div>
+        <div className="field">
+          <input type="text" name="email" placeholder="Enter your email" />
+          <i className="bi bi-envelope-fill"></i>
+        </div>
+      </div>
+      <div className="dbl-field">
+        <div className="field">
+          <input type="text" name="phone" placeholder="Enter your phone" />
+          <i className="bi bi-telephone-fill"></i>
+        </div>
+        <div className="field">
+          <input type="text" name="website" placeholder="Enter your website" />
+          <i className="bi bi-globe"></i>
+        </div>
+      </div>
+      <div className="message">
+        <textarea placeholder="Write your message" name="message"></textarea>
+        <i className="bi bi-chat-left-dots-fill"></i>
+      </div>
+      <center>
+      <div className="button-area">
+        <button type="submit">Send Message</button>
+        <span></span>
+      </div>
+      </center>
+      <br />
+    </form>
+  </div>
             </center>
         </div>
     );
