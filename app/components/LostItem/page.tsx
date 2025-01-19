@@ -60,14 +60,20 @@ export default function Page() {
           <i className="bi bi-box-fill"></i>
         </div>
         <div className="field">
-          <input type="text" name="email" placeholder="Found Place" />
+          <input type="text" name="email" placeholder="Lost Place" />
           <i className="bi bi-geo-alt-fill"></i>
         </div>
       </div>
       <div className="dbl-field">
         <div className="field">
-          <input type="text" name="phone" placeholder="Enter your email" />
           <i className="bi bi-envelope-fill"></i>
+          <input 
+            type="email" 
+            name="email" 
+            value={session.user?.email || ''} 
+            readOnly 
+            style={{ backgroundColor: '#1a1a1a' }}
+          />
         </div>
         <div className="field">
           <input type="text" name="website" placeholder="Lost Date (dd/mm/yyyy)" />
@@ -87,7 +93,7 @@ export default function Page() {
         </div>
         <div className="field">
           <input type="tel" name="website" placeholder="Phone Number" />
-          <i className="bi bi-calendar-event-fill"></i>
+          <i className="bi bi-telephone-fill"></i>
         </div>
       </div>
       <div className="message">

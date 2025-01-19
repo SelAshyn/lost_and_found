@@ -66,8 +66,14 @@ export default function Page() {
       </div>
       <div className="dbl-field">
         <div className="field">
-          <input type="text" name="phone" placeholder="Enter your email" />
           <i className="bi bi-envelope-fill"></i>
+          <input 
+            type="email" 
+            name="email" 
+            value={session.user?.email || ''} 
+            readOnly 
+            style={{ backgroundColor: '#1a1a1a' }}
+          />
         </div>
         <div className="field">
           <input type="text" name="website" placeholder="Lost Date (dd/mm/yyyy)" />
