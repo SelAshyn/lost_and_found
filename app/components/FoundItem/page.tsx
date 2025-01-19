@@ -4,6 +4,18 @@ import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import styles from './styles.module.css';
+import './style.css'
+import { Sofia_Sans, Source_Sans_3} from "next/font/google"
+
+const sofia = Sofia_Sans({
+    weight: '500',
+    subsets: ['cyrillic-ext', 'greek'],
+})
+
+const source = Source_Sans_3({
+    subsets: ['cyrillic-ext', 'greek'],
+    weight: '400'
+})
 
 export default function Page() {
     const { data: session } = useSession();
@@ -35,20 +47,63 @@ export default function Page() {
     }
 
     return (
-        <div className="p-6 max-w-2xl mx-auto">
-            <h1 className="text-2xl font-bold mb-4">Report Lost Item</h1>
-            <div className="space-y-4">
-                <form className="space-y-4">
-                    <div>
-                        <label className="block mb-2">Item Name</label>
-                        <input 
-                            type="text" 
-                            className="w-full p-2 border rounded"
-                            placeholder="Enter item name"
-                        />
-                    </div>
-                    {/* Add more form fields as needed */}
-                </form>
+        <div>
+            <div className="content">
+            <center>
+            <div className="wrapper">
+                <br />
+    <header style={sofia.style}>REPORT FOUND ITEM</header>
+    <form action="#" style={source.style}>
+      <div className="dbl-field">
+        <div className="field">
+          <input type="text" name="name" placeholder="Item Name" />
+          <i className="bi bi-box-fill"></i>
+        </div>
+        <div className="field">
+          <input type="text" name="email" placeholder="Found Place" />
+          <i className="bi bi-geo-alt-fill"></i>
+        </div>
+      </div>
+      <div className="dbl-field">
+        <div className="field">
+          <input type="text" name="phone" placeholder="Enter your email" />
+          <i className="bi bi-envelope-fill"></i>
+        </div>
+        <div className="field">
+          <input type="text" name="website" placeholder="Lost Date (dd/mm/yyyy)" />
+          <i className="bi bi-calendar-event-fill"></i>
+        </div>
+      </div>
+      <div className="dbl-field">
+        <div className="field">
+          <select name="Select Category" id="" aria-placeholder='Select Category'>
+            <option value="" disabled selected hidden>Select Category</option>
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="opel">Opel</option>
+            <option value="audi">Audi</option>
+          </select>
+          <i className="bi bi-bookmarks-fill"></i>
+        </div>
+        <div className="field">
+          <input type="text" name="website" placeholder="Submission Place" />
+          <i className="bi bi-geo-alt-fill"></i>
+        </div>
+      </div>
+      <div className="message">
+        <textarea placeholder="Description of the Item" name="message"></textarea>
+        <i className="bi bi-file-earmark-fill"></i>
+      </div>
+      <center>
+      <div className="button-area">
+        <button type="submit">REPORT</button>
+        <span></span>
+      </div>
+      </center>
+      <br />
+    </form>
+  </div>
+            </center>
             </div>
         </div>
     );

@@ -49,7 +49,7 @@ export default function Page() {
     return (
         <div>
            <div className="content">
-           <center>
+            <center>
             <div className="wrapper">
                 <br />
     <header style={sofia.style}>REPORT LOST ITEM</header>
@@ -60,23 +60,33 @@ export default function Page() {
           <i className="bi bi-box-fill"></i>
         </div>
         <div className="field">
-          <input type="text" name="email" placeholder="Lost Place" />
+          <input type="text" name="email" placeholder="Found Place" />
           <i className="bi bi-geo-alt-fill"></i>
         </div>
       </div>
       <div className="dbl-field">
         <div className="field">
-          <input 
-            type="email" 
-            name="email" 
-            value={session.user?.email || ''} 
-            readOnly 
-            style={{ backgroundColor: '#1a1a1a' }}
-          />
+          <input type="text" name="phone" placeholder="Enter your email" />
           <i className="bi bi-envelope-fill"></i>
         </div>
         <div className="field">
           <input type="text" name="website" placeholder="Lost Date (dd/mm/yyyy)" />
+          <i className="bi bi-calendar-event-fill"></i>
+        </div>
+      </div>
+      <div className="dbl-field">
+        <div className="field">
+          <select name="Select Category" id="" aria-placeholder='Select Category'>
+            <option value="" disabled selected hidden>Select Category</option>
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="opel">Opel</option>
+            <option value="audi">Audi</option>
+          </select>
+          <i className="bi bi-bookmarks-fill"></i>
+        </div>
+        <div className="field">
+          <input type="tel" name="website" placeholder="Phone Number" />
           <i className="bi bi-calendar-event-fill"></i>
         </div>
       </div>
@@ -94,7 +104,7 @@ export default function Page() {
     </form>
   </div>
             </center>
-           </div>
+            </div>
         </div>
     );
 }
