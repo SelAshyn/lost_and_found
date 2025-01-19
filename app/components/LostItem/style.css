@@ -82,12 +82,12 @@
     font-size: 20px;
   }
   form .message textarea{
-    min-height: 130px;
+    min-height: 140px;
     resize: vertical;
     font-family: "Poppins", sans-serif;
     max-height: 230px;
-    max-width: 651px;
-    min-width: 651px;
+    max-width: 691px;
+    min-width: 691px;
 
     padding: 15px 20px 0 48px;
   }
