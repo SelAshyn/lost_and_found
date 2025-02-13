@@ -84,8 +84,8 @@ export default function Page() {
         <div className="field">
           <select name="Select Category" id="" aria-placeholder='Select Category'>
             <option value="" disabled selected hidden>Select Category</option>
-            <option value="volvo">Volvo</option>
-            <option value="saab">Saab</option>
+            <option value="volvo">Stationary</option>
+            <option value="saab">Clothes</option>
             <option value="opel">Opel</option>
             <option value="audi">Audi</option>
           </select>
