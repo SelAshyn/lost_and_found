@@ -4,6 +4,7 @@ import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import "./style.css";
 
 export default function AdminDashboard() {
@@ -48,7 +49,7 @@ export default function AdminDashboard() {
                 <h1 className="admin-title">Admin Dashboard</h1>
                 <div className="admin-welcome">
                     <span>Welcome, {session.user.name}</span>
-                    <img 
+                    <Image 
                         src={session.user.image ?? ''} 
                         alt="Admin" 
                         className="admin-profile-pic"
