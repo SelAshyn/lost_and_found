@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import "./globals.css";
+import "./admin/style.css"
 import "bootstrap-icons/font/bootstrap-icons.css";
 import Appbar from "./Appbar/page"; 
 import { Providers } from "./provider";
