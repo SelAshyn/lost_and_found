@@ -1,13 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Rounded+Mplus+1c+Bold:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Sansation:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Saira+Stencil+One:wght@400&display=swap');
-body {
-  	margin: 0; line-height: normal;
-}
-
-
-@import "tailwindcss";
 
 :root {
   --background: #ffffff;
