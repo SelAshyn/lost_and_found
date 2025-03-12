@@ -73,6 +73,7 @@ export default function AdminDashboard() {
         <Management />
       </div>
     </div>
+    <p className="stat-value">{stats.pendingClaims}</p>
     </center>
     );
 } 
