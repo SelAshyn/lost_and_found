@@ -1,4 +1,5 @@
 import React from 'react';
+import "./style.css";
 import { M_PLUS_Rounded_1c } from 'next/font/google';
 import TotalLostItem from "./TotalLostItem/page"
 import TotalFoundItem from './TotalFoundItem/page';
