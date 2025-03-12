@@ -1,3 +1,8 @@
+"use client";
+
+import { useSession } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
 import React from 'react';
 import { M_PLUS_Rounded_1c } from 'next/font/google';
 import TotalLostItem from "./TotalLostItem/page"
@@ -8,12 +13,48 @@ import ViewLostItem from './ViewLostItem/page';
 import ViewFoundItem from './ViewFoundItem/page';
 
 
+
 const m_PLUS_Rounded_1c = M_PLUS_Rounded_1c({
   subsets: ['latin'],
   weight: '700',
 })
 
-const Dashboard: React.FC = () => {
+export default function AdminDashboard() {
+  const { data: session } = useSession();
+  const router = useRouter();
+  const [stats, setStats] = useState({
+      totalLost: 0,
+      totalFound: 0,
+      pendingClaims: 0
+  });
+
+  useEffect(() => {
+      if (!session || session.user.role !== 'admin') {
+          router.push('/');
+      }
+  }, [session, router]);
+
+  useEffect(() => {
+      // Fetch stats from your API
+      const fetchStats = async () => {
+          // Replace with actual API call
+          const data = {
+              totalLost: 10,
+              totalFound: 5,
+              pendingClaims: 3
+          };
+          setStats(data);
+      };
+
+      if (session?.user?.role === 'admin') {
+          fetchStats();
+      }
+  }, [session]);
+
+  if (!session || session.user.role !== 'admin') {
+      return null;
+  }
+
   return (
     <center>
       <br /><br /><br /><br />
@@ -38,6 +79,5 @@ const Dashboard: React.FC = () => {
   );
 };
 
-export default Dashboard;
 
 
