@@ -17,7 +17,7 @@ export default function Home() {
 
   useEffect(() => {
     if (session?.user?.role === 'admin') {
-      router.replace('/admin/dashboard');
+      router.replace('/admin');
     }
   }, [session, router]);
 
