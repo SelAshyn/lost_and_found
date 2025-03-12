@@ -42,3 +42,49 @@ body::before {
   min-height: 100vh;
   overflow-x: hidden;
 }
+
+
+.container
+{
+  padding: 200px;
+  background-color: #0a0a0a;
+}
+
+.container .lost
+{
+  font-size: 50px;
+  font-family: 'Rounded Mplus 1c Bold', sans-serif;
+  color: white;
+  background-color: black;
+  text-align: center;
+}
+.head
+{
+  width: 340px;
+  height: 60px;
+  text-align: center;
+  display: flex;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+}
+
+.khai
+{
+  width: 80%;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.527);
+  padding: 40px;
+  border-radius: 10px;
+}
+
+button
+{
+  height: 50px;
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 10px;
+  width: 300px;
+}
+
