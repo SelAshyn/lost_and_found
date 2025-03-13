@@ -78,13 +78,3 @@ body::before {
   padding: 40px;
   border-radius: 10px;
 }
-
-button
-{
-  height: 50px;
-  color: rgb(0, 0, 0);
-  border: none;
-  border-radius: 10px;
-  width: 300px;
-}
-
