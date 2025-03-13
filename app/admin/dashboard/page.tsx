@@ -55,11 +55,11 @@ export default function AdminDashboard() {
 
     return (
         <center>
-      <br /><br /><br />
+      <br /><br />
       <div className="head">
         <h1 className={`font-bold text-3xl ${m_PLUS_Rounded_1c.className}`}>ADMIN DASHBOARD</h1>
       </div>
-      <br /><br /><br />
+      <br /><br />
     <div className="khai">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
         <TotalLostItem />
